@@ -1,23 +1,16 @@
 #include <iostream>
 
+void modify(int &val){
+    val = 9;
+}
+
+int& display(int &val){
+    return val;
+}
+
 int main(){
-    int n;
-    std::cout << "How many numbers?: ";
-    std::cin >> n;
-
-    int *ptr = new int[n];
-
-    for (int i = 0; i < n; i++){
-        std::cout << "Enter a number: ";
-        int x;
-        std::cin >> x;
-        ptr[i] = x;
-    }
-
-    for (int i = 0; i < n; i++){
-        std::cout << ptr[i] << " ";
-    }
-    std::cout << std::endl; 
-    
+    int val = 10;
+    display(val) = 100;
+    std::cout << val;
     return 0;
 }
