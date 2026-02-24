@@ -74,9 +74,9 @@ class BST{
                     node = temp;
                 }
                 else{
-                    Node* sucessor = findMin(node -> right);
-                    node -> data = sucessor -> data;
-                    removeRec(node -> right, sucessor -> data);
+                    Node* successor = findMin(node -> right);
+                    node -> data = successor -> data;
+                    removeRec(node -> right, successor -> data);
                 }
             }
         }
