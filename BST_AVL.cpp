@@ -42,7 +42,7 @@ class BST{
         Node* findMin(Node* node){
             if (node == nullptr){
                 return nullptr;
-            } //in case the tree is empty
+            } //in case the tree is empty    
 
             while (node -> left != nullptr){
                 node = node -> left;
@@ -90,7 +90,7 @@ class BST{
             inorderRec(node -> left);
 
             std::cout << node -> data << " ";
-            
+
             inorderRec(node -> right);
         }
 
@@ -126,13 +126,13 @@ class BST{
             Node* temp = root;
 
             while (temp != nullptr){
-                if (temp -> data == val){
+                if (val == temp -> data){
                     return true;
                 }
-                else if (temp -> data < val){
+                else if (val > temp -> data){
                     temp = temp -> right;
                 }
-                else{
+                else if (val < temp -> data){
                     temp = temp -> left;
                 }
             }
@@ -252,6 +252,7 @@ class AVLTree{
             if (node == nullptr){
                 return;
             }
+
             inorderRec(node -> left);
 
             std::cout << node -> data << " ";
@@ -265,6 +266,7 @@ class AVLTree{
             }
 
             clearRec(node -> left);
+
             clearRec(node -> right);
 
             delete node;
